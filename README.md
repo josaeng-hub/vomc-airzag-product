@@ -19,6 +19,14 @@
 | `web-design-guidelines` | 웹 UI 가이드라인 기준 코드 리뷰 (접근성·UX) | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) (063bee9) | MIT |
 | `react-best-practices` | React/Next.js 성능 최적화 규칙 | 〃 | 〃 |
 
+### 화면 효과 (사내 가이드 기준)
+
+| 스킬 | 용도 |
+|---|---|
+| `web-effects` | 노션 가이드 "클로드 코드로 비싼 사이트 화면 효과 내는 4가지"를 스킬로 정리. 사이트 종류에 맞춰 shadergradient · react-three-fiber · liquid-glass-js · liquid-logo 중 하나를 골라 한 곳에만 적용 |
+
+예제 사이트와 설치된 라이브러리는 [`web/README.md`](web/README.md)를 보세요.
+
 ## MCP 서버 (`.mcp.json`)
 
 - **playwright**: 브라우저를 열어 만든 페이지를 직접 보고 확인합니다 (`@playwright/mcp`).

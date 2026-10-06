@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Glass Nav Demo</title>
+    <link rel="stylesheet" href="/vendor/liquid-glass-js/glass.css" />
+    <style>
+      /* liquid-glass-js 예제: 상단 내비게이션 바만 유리 패널로. 빌드 없이 순수 HTML. */
+      body {
+        margin: 0;
+        min-height: 200vh;
+        font-family: system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        background:
+          radial-gradient(circle at 20% 20%, #d97757 0, transparent 40%),
+          radial-gradient(circle at 80% 30%, #f2d6c9 0, transparent 45%),
+          linear-gradient(160deg, #faf7f2, #e9ded3);
+        color: #2b2420;
+      }
+      #nav {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 140px 16px 0;
+      }
+      h1 {
+        font-size: clamp(32px, 6vw, 56px);
+        line-height: 1.1;
+        margin: 0 0 12px;
+      }
+      a.back {
+        color: #2b2420;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <main>
+      <h1>유리 내비게이션 예제</h1>
+      <p>liquid-glass-js (dashersw) — 상단 내비게이션 한 곳에만 적용했습니다.</p>
+      <p><a class="back" href="/">← 예제 목록으로</a></p>
+    </main>
+
+    <script src="/vendor/liquid-glass-js/html2canvas.min.js"></script>
+    <script src="/vendor/liquid-glass-js/container.js"></script>
+    <script src="/vendor/liquid-glass-js/button.js"></script>
+    <script>
+      const nav = new Container({ borderRadius: 24, type: 'pill', tintOpacity: 0.2 })
+      for (const label of ['홈', '제품', '브랜드', '문의']) {
+        nav.addChild(new Button({ text: label, size: 18, type: 'pill' }))
+      }
+      document.querySelector('#nav').appendChild(nav.element)
+
+      // 창 크기가 바뀌면 유리 굴절 배경이 어긋날 수 있음: 원본 demo.js의 resize 처리 참고
+    </script>
+  </body>
+</html>
